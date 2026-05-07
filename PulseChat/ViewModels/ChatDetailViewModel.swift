@@ -60,7 +60,7 @@ final class ChatDetailViewModel: ObservableObject {
         let message = Message(
             id: UUID().uuidString,
             text: trimmed,
-            senderId: currentUserId, // 🔥 AQUÍ ESTÁ LA MAGIA
+            senderId: currentUserId, 
             date: Date(),
             chatId: chatId,
             imageData: imageData
