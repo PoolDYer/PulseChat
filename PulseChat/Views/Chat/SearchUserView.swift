@@ -4,7 +4,7 @@ struct SearchUserView: View {
 
     @StateObject var viewModel: SearchUserViewModel
 
-    // 🔥 navegación moderna
+    
     @State private var selectedChat: Chat?
 
     var body: some View {
