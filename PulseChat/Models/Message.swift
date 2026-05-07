@@ -10,7 +10,7 @@ import Foundation
 struct Message: Identifiable, Equatable, Hashable {
     let id: String
     let text: String
-    let senderId: String   // 🔥 CLAVE
+    let senderId: String   
     let date: Date
     let chatId: String
     let imageData: Data?
