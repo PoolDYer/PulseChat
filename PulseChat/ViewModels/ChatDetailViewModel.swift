@@ -14,7 +14,7 @@ final class ChatDetailViewModel: ObservableObject {
 
     private let repository: ChatRepository
     let chatId: String
-    let currentUserId: String   // 🔥 EXPONER (no private)
+    let currentUserId: String  
 
     private var lastSeenKey: String {
         "pulsechat.lastSeen.\(chatId)"
