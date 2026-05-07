@@ -120,14 +120,14 @@ private extension ChatListView {
         .listStyle(.plain)
     }
 
-    // ✅ Ordenar por último mensaje
+    // Ordenar por último mensaje
     var sortedChats: [Chat] {
         viewModel.chats.sorted {
             $0.lastUpdated > $1.lastUpdated
         }
     }
 
-    // ✅ Mostrar SOLO el otro usuario
+    // Mostrar SOLO el otro usuario
     func chatDisplayName(_ chat: Chat) -> String {
         let others = chat.participants.filter {
             $0.id != viewModel.currentUserId
