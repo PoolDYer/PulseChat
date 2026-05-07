@@ -27,7 +27,7 @@ struct ChatRowView: View {
         .accessibilityElement(children: .combine)
     }
 
-    // ✅ Mostrar SOLO otros usuarios
+    // Mostrar SOLO otros usuarios
     private var chatDisplayName: String {
 
         let others = chat.participants.filter {
