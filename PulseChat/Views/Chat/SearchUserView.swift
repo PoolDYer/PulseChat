@@ -46,12 +46,12 @@ struct SearchUserView: View {
         }
         .navigationTitle(AppStrings.searchUsersTitle)
 
-        // 🔥 API NUEVA (CORRECTA)
+        //  API NUEVA
         .navigationDestination(item: $selectedChat) { chat in
             ChatDetailView(
                 viewModel: ChatDetailViewModel(
                     chatId: chat.id,
-                    currentUserId: viewModel.currentUser.id, // 🔥 CLAVE
+                    currentUserId: viewModel.currentUser.id, 
                     repository: DependencyContainer.shared.chatRepository
                 ),
                 chatTitle: chat.participants.map { $0.email }.joined(separator: ", ")
