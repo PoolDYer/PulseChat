@@ -48,10 +48,6 @@ Aplicacion de mensajeria para iOS construida con SwiftUI. Demuestra autenticacio
   - Galeria (Photos).
   - Ubicacion (CoreLocation).
   - Notificaciones (UserNotifications).
-- Requiere claves en Info.plist (configurar en Xcode):
-  - `NSCameraUsageDescription`
-  - `NSPhotoLibraryUsageDescription`
-  - `NSLocationWhenInUseUsageDescription`
 
 ## Tema claro/oscuro
 - Selector de tema con `ThemePickerView`.
