@@ -11,13 +11,13 @@ enum Logger {
 
     static func log(_ message: String) {
         #if DEBUG
-        print("🟢 [LOG]: \(message)")
+        print("[LOG]: \(message)")
         #endif
     }
 
     static func error(_ message: String) {
         #if DEBUG
-        print("🔴 [ERROR]: \(message)")
+        print("[ERROR]: \(message)")
         #endif
     }
 }
