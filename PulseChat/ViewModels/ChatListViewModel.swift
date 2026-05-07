@@ -16,7 +16,6 @@ final class ChatListViewModel: ObservableObject {
         user
     }
 
-    // ✅ EXPONER SOLO EL ID (lo que necesita la UI)
     var currentUserId: String {
         user.id
     }
