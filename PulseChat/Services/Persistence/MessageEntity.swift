@@ -12,7 +12,7 @@ import Foundation
 class MessageEntity {
     @Attribute(.unique) var id: String
     var text: String
-    var senderId: String?   // 🔥 reemplaza isSentByMe
+    var senderId: String?  
     var date: Date
     var imageData: Data?
 
