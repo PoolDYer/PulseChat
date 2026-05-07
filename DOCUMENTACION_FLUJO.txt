@@ -109,7 +109,6 @@ Fecha de referencia: 6 de mayo de 2026
 9) DETALLE DE ARCHIVOS (UNO POR UNO)
 
 9.1 Archivos en raiz
-- README.md: resumen del proyecto, requisitos, instalacion, dependencias y build.
 - README1.md: documentacion tecnica completa, alcance, arquitectura y criterios.
 - DOCUMENTACION_FLUJO.txt: este documento.
 
