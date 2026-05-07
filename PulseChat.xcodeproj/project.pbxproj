@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAD5ED752FAABA6F00657F63 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DAD5ED742FAABA6F00657F63 /* FirebaseAuth */; };
+		DAD5ED772FAABA6F00657F63 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DAD5ED762FAABA6F00657F63 /* FirebaseAuthCombine-Community */; };
+		DAD5ED792FAABA6F00657F63 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DAD5ED782FAABA6F00657F63 /* FirebaseCore */; };
+		DAD5ED7B2FAABA6F00657F63 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DAD5ED7A2FAABA6F00657F63 /* FirebaseDatabase */; };
+		DAD5ED7D2FAABA6F00657F63 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DAD5ED7C2FAABA6F00657F63 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAA46B6E2FA9D6CF00B33146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAA46B562FA9D6C900B33146 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAA46B5D2FA9D6C900B33146;
+			remoteInfo = PulseChat;
+		};
+		DAA46B782FA9D6CF00B33146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAA46B562FA9D6C900B33146 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAA46B5D2FA9D6C900B33146;
+			remoteInfo = PulseChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DAA46B5E2FA9D6C900B33146 /* PulseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA46B6D2FA9D6CF00B33146 /* PulseChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA46B772FA9D6CF00B33146 /* PulseChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DAA46B602FA9D6C900B33146 /* PulseChat */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PulseChat;
+			sourceTree = "<group>";
+		};
+		DAA46B702FA9D6CF00B33146 /* PulseChatTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PulseChatTests;
+			sourceTree = "<group>";
+		};
+		DAA46B7A2FA9D6CF00B33146 /* PulseChatUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PulseChatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAA46B5B2FA9D6C900B33146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD5ED752FAABA6F00657F63 /* FirebaseAuth in Frameworks */,
+				DAD5ED792FAABA6F00657F63 /* FirebaseCore in Frameworks */,
+				DAD5ED7B2FAABA6F00657F63 /* FirebaseDatabase in Frameworks */,
+				DAD5ED7D2FAABA6F00657F63 /* FirebaseFirestore in Frameworks */,
+				DAD5ED772FAABA6F00657F63 /* FirebaseAuthCombine-Community in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B6A2FA9D6CF00B33146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B742FA9D6CF00B33146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAA46B552FA9D6C900B33146 = {
+			isa = PBXGroup;
+			children = (
+				DAA46B602FA9D6C900B33146 /* PulseChat */,
+				DAA46B702FA9D6CF00B33146 /* PulseChatTests */,
+				DAA46B7A2FA9D6CF00B33146 /* PulseChatUITests */,
+				DAA46B5F2FA9D6C900B33146 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAA46B5F2FA9D6C900B33146 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAA46B5E2FA9D6C900B33146 /* PulseChat.app */,
+				DAA46B6D2FA9D6CF00B33146 /* PulseChatTests.xctest */,
+				DAA46B772FA9D6CF00B33146 /* PulseChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAA46B5D2FA9D6C900B33146 /* PulseChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAA46B812FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChat" */;
+			buildPhases = (
+				DAA46B5A2FA9D6C900B33146 /* Sources */,
+				DAA46B5B2FA9D6C900B33146 /* Frameworks */,
+				DAA46B5C2FA9D6C900B33146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DAA46B602FA9D6C900B33146 /* PulseChat */,
+			);
+			name = PulseChat;
+			packageProductDependencies = (
+				DAD5ED742FAABA6F00657F63 /* FirebaseAuth */,
+				DAD5ED762FAABA6F00657F63 /* FirebaseAuthCombine-Community */,
+				DAD5ED782FAABA6F00657F63 /* FirebaseCore */,
+				DAD5ED7A2FAABA6F00657F63 /* FirebaseDatabase */,
+				DAD5ED7C2FAABA6F00657F63 /* FirebaseFirestore */,
+			);
+			productName = PulseChat;
+			productReference = DAA46B5E2FA9D6C900B33146 /* PulseChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAA46B6C2FA9D6CF00B33146 /* PulseChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAA46B842FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChatTests" */;
+			buildPhases = (
+				DAA46B692FA9D6CF00B33146 /* Sources */,
+				DAA46B6A2FA9D6CF00B33146 /* Frameworks */,
+				DAA46B6B2FA9D6CF00B33146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAA46B6F2FA9D6CF00B33146 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DAA46B702FA9D6CF00B33146 /* PulseChatTests */,
+			);
+			name = PulseChatTests;
+			packageProductDependencies = (
+			);
+			productName = PulseChatTests;
+			productReference = DAA46B6D2FA9D6CF00B33146 /* PulseChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DAA46B762FA9D6CF00B33146 /* PulseChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAA46B872FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChatUITests" */;
+			buildPhases = (
+				DAA46B732FA9D6CF00B33146 /* Sources */,
+				DAA46B742FA9D6CF00B33146 /* Frameworks */,
+				DAA46B752FA9D6CF00B33146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAA46B792FA9D6CF00B33146 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DAA46B7A2FA9D6CF00B33146 /* PulseChatUITests */,
+			);
+			name = PulseChatUITests;
+			packageProductDependencies = (
+			);
+			productName = PulseChatUITests;
+			productReference = DAA46B772FA9D6CF00B33146 /* PulseChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAA46B562FA9D6C900B33146 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					DAA46B5D2FA9D6C900B33146 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					DAA46B6C2FA9D6CF00B33146 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = DAA46B5D2FA9D6C900B33146;
+					};
+					DAA46B762FA9D6CF00B33146 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = DAA46B5D2FA9D6C900B33146;
+					};
+				};
+			};
+			buildConfigurationList = DAA46B592FA9D6C900B33146 /* Build configuration list for PBXProject "PulseChat" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = DAA46B552FA9D6C900B33146;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DAA46B5F2FA9D6C900B33146 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAA46B5D2FA9D6C900B33146 /* PulseChat */,
+				DAA46B6C2FA9D6CF00B33146 /* PulseChatTests */,
+				DAA46B762FA9D6CF00B33146 /* PulseChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAA46B5C2FA9D6C900B33146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B6B2FA9D6CF00B33146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B752FA9D6CF00B33146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAA46B5A2FA9D6C900B33146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B692FA9D6CF00B33146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA46B732FA9D6CF00B33146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAA46B6F2FA9D6CF00B33146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAA46B5D2FA9D6C900B33146 /* PulseChat */;
+			targetProxy = DAA46B6E2FA9D6CF00B33146 /* PBXContainerItemProxy */;
+		};
+		DAA46B792FA9D6CF00B33146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAA46B5D2FA9D6C900B33146 /* PulseChat */;
+			targetProxy = DAA46B782FA9D6CF00B33146 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DAA46B7F2FA9D6CF00B33146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DAA46B802FA9D6CF00B33146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAA46B822FA9D6CF00B33146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "PulseChat necesita acceso a la camara para tomar fotos.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "PulseChat necesita acceso a la ubicacion para funciones de la app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PulseChat necesita acceso a la galeria para compartir fotos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DAA46B832FA9D6CF00B33146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "PulseChat necesita acceso a la camara para tomar fotos.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "PulseChat necesita acceso a la ubicacion para funciones de la app.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PulseChat necesita acceso a la galeria para compartir fotos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DAA46B852FA9D6CF00B33146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PulseChat";
+			};
+			name = Debug;
+		};
+		DAA46B862FA9D6CF00B33146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PulseChat";
+			};
+			name = Release;
+		};
+		DAA46B882FA9D6CF00B33146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PulseChat;
+			};
+			name = Debug;
+		};
+		DAA46B892FA9D6CF00B33146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pool.PulseChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PulseChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAA46B592FA9D6C900B33146 /* Build configuration list for PBXProject "PulseChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAA46B7F2FA9D6CF00B33146 /* Debug */,
+				DAA46B802FA9D6CF00B33146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAA46B812FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAA46B822FA9D6CF00B33146 /* Debug */,
+				DAA46B832FA9D6CF00B33146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAA46B842FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAA46B852FA9D6CF00B33146 /* Debug */,
+				DAA46B862FA9D6CF00B33146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAA46B872FA9D6CF00B33146 /* Build configuration list for PBXNativeTarget "PulseChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAA46B882FA9D6CF00B33146 /* Debug */,
+				DAA46B892FA9D6CF00B33146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAD5ED742FAABA6F00657F63 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DAD5ED762FAABA6F00657F63 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		DAD5ED782FAABA6F00657F63 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		DAD5ED7A2FAABA6F00657F63 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		DAD5ED7C2FAABA6F00657F63 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAD5ED732FAABA6F00657F63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DAA46B562FA9D6C900B33146 /* Project object */;
+}

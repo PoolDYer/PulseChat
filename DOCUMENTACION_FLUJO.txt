@@ -1,0 +1,238 @@
+DOCUMENTACION DEL FLUJO Y ARCHIVOS - PulseChat
+Fecha de referencia: 6 de mayo de 2026
+
+1) RESUMEN DEL PROYECTO
+- Plataforma: iOS (SwiftUI + SwiftData + Firebase)
+- Arquitectura: MVVM con capas (Views, ViewModels, Repositories, Services, Persistence, Core)
+- Flujo principal: Login/Registro -> Lista de chats -> Detalle de chat
+- Datos: Firebase Auth + Firestore como origen principal; SwiftData como cache local
+- Estado: carga, error, vacio, offline
+- Seguridad: Keychain para userId; Firebase Auth para sesion
+- Permisos: camara, galeria, ubicacion y notificaciones (solicitados al inicio)
+- Tema: system/light/dark persistente
+- Idiomas: en/es/system con Localizable.strings
+- Build: Xcode 15+ con iOS 17+
+
+2) FLUJO FUNCIONAL DETALLADO (PASO A PASO)
+2.1 Inicio y configuracion
+- PulseChatApp inicia Firebase (FirebaseApp.configure) y crea el ModelContainer de SwiftData.
+- Se configura DependencyContainer con SwiftDataStack (repositorios listos).
+- Se aplica idioma con LanguageManager (override de Bundle).
+- Se proveen objetos globales via environment: AppState y NetworkMonitor.
+
+2.2 Permisos al iniciar
+- RootView dispara PermissionManager.requestAllPermissions() al cargar.
+- Se solicitan: ubicacion, camara, fotos y notificaciones.
+
+2.3 Autenticacion
+- AuthViewModel intenta restaurar sesion al iniciar (AuthRepository.currentUser).
+- Si existe usuario, RootView navega a ChatListView.
+- Si no existe usuario, RootView muestra LoginView.
+
+2.4 Login/Registro
+- LoginView permite cambiar entre login y register.
+- LoginView llama a AuthViewModel.login o AuthViewModel.register.
+- AuthRepository usa Firebase Auth para crear o iniciar sesion.
+- Se crea/actualiza documento de usuario en Firestore.
+- Se guarda userId en Keychain.
+
+2.5 Lista de chats
+- ChatListView carga chats en onAppear y en pull-to-refresh.
+- ChatListView muestra estados:
+  - LoadingView cuando isLoading.
+  - ErrorView si hay error.
+  - EmptyStateView si no hay chats.
+- NetworkMonitor muestra banner offline si no hay conexion.
+- Navegacion:
+  - Tap en chat -> ChatDetailView.
+  - Boton buscar -> SearchUserView.
+  - Boton logout -> AuthViewModel.logout.
+
+2.6 Busqueda de usuarios y creacion de chat
+- SearchUserView consulta usuarios (Firestore) por emailLowercase.
+- Se excluye el usuario actual.
+- Al elegir un usuario, se crea chat si no existe.
+- Se navega a ChatDetailView con el chat creado/encontrado.
+
+2.7 Detalle del chat
+- ChatDetailView carga mensajes al aparecer.
+- Muestra mensajes en ScrollView con burbujas.
+- Permite:
+  - Enviar texto
+  - Adjuntar imagen (camara o galeria)
+  - Editar mensajes propios
+  - Eliminar mensajes propios
+- Si se adjunta imagen sin texto, el mensaje se guarda localmente (SwiftData) y el ultimo mensaje del chat usa el fallback de AppStrings.imageMessageFallback.
+- Se guardan fechas de ultimo visto por chat en UserDefaults (pulsechat.lastSeen.<chatId>).
+- Si hay mensajes nuevos desde la ultima vista, se dispara notificacion local.
+
+2.8 Manejo offline
+- NetworkMonitor detecta conectividad y la UI muestra un banner.
+- ChatRepository intenta sincronizar con Firestore.
+- Si falla y existen datos locales, retorna los datos de SwiftData.
+
+3) ARQUITECTURA Y CAPAS
+- Views: pantallas SwiftUI y componentes de UI.
+- ViewModels: estado de UI, acciones y coordinacion con repositorios.
+- Repositories: acceso a Firebase/SwiftData; orquestan sincronizacion.
+- Services: API REST opcional, Firebase async wrappers, utilidades.
+- Persistence: SwiftData con entidades y relaciones.
+- Core: constantes, DI, seguridad, extensiones, tema y utils.
+
+4) CONSUMO DE DATOS
+- Firebase Auth: login/registro por email y password.
+- Firestore: usuarios, chats y mensajes.
+- REST opcional: APIClient/MockAPIClient (no conectado al flujo principal).
+
+5) PERSISTENCIA LOCAL
+- SwiftData almacena UserEntity, ChatEntity, MessageEntity.
+- Cache local se actualiza desde Firestore y se consulta si hay offline.
+- UserDefaults almacena lastSeen por chat.
+
+6) SEGURIDAD
+- KeychainManager guarda userId y token (token no se usa en flujo actual).
+- Firebase Auth maneja la sesion.
+
+7) PERMISOS Y NOTIFICACIONES
+- PermissionManager solicita:
+  - Camara (AVFoundation)
+  - Galeria (Photos)
+  - Ubicacion (CoreLocation)
+  - Notificaciones (UserNotifications)
+- NotificationManager solicita autorizacion y envia notificaciones locales.
+- Importante: se deben definir los usage descriptions en el Info.plist del target en Xcode.
+
+8) i18n Y TEMA
+- Idiomas: en/es/system con Localizable.strings y LanguagePickerView.
+- Tema: system/light/dark con ThemePickerView y AppStorage.
+
+9) DETALLE DE ARCHIVOS (UNO POR UNO)
+
+9.1 Archivos en raiz
+- README.md: resumen del proyecto, requisitos, instalacion, dependencias y build.
+- README1.md: documentacion tecnica completa, alcance, arquitectura y criterios.
+- DOCUMENTACION_FLUJO.txt: este documento.
+
+9.2 App
+- PulseChat/App/PulseChatApp.swift: punto de entrada, configura Firebase, SwiftData, DI, idioma y tema; muestra RootView.
+- PulseChat/App/AppState.swift: estado global basico; soporte de idioma dinamico (Bundle proxy) y helper de localization.
+
+9.3 Core - Constans
+- PulseChat/Core/Constans/Config.swift: constantes de configuracion (API base, colecciones Firestore, timeouts, keys de Keychain).
+- PulseChat/Core/Constans/Strings.swift: accesos centralizados a Localizable.strings (AppStrings).
+- PulseChat/Core/Constans/Colors.swift: paleta de colores (AppColors).
+
+9.4 Core - DI
+- PulseChat/Core/DI/DependencyContainer.swift: inyeccion de dependencias para repositorios con Firebase y SwiftData.
+
+9.5 Core - Extensions
+- PulseChat/Core/Extensions/Color+Hex.swift: inicializador Color desde hex.
+- PulseChat/Core/Extensions/Date+Format.swift: helpers para formatear fechas.
+
+9.6 Core - Security
+- PulseChat/Core/Security/KeychainManager.swift: wrapper de Keychain (save/get/delete).
+
+9.7 Core - Utils
+- PulseChat/Core/Utils/NetworkMonitor.swift: monitor de conectividad con NWPathMonitor.
+- PulseChat/Core/Utils/PermissionManager.swift: solicita permisos de camara, galeria, ubicacion y notificaciones.
+- PulseChat/Core/Utils/NotificationManager.swift: pide permisos y envia notificaciones locales.
+- PulseChat/Core/Utils/Logger.swift: logging condicional en DEBUG.
+
+9.8 Core - UI/Theme
+- PulseChat/Core/UI/Theme/AppTheme.swift: constantes de UI y enum ThemeMode.
+
+9.9 Core - UI/Components
+- PulseChat/Core/UI/Components/ErrorView.swift: muestra mensajes de error.
+- PulseChat/Core/UI/Components/LoadingView.swift: indicador de carga.
+- PulseChat/Core/UI/Components/PrimaryButton.swift: boton reutilizable (no usado en flujo principal).
+- PulseChat/Core/UI/Components/ThemePickerView.swift: selector de tema.
+- PulseChat/Core/UI/Components/LanguagePickerView.swift: selector de idioma.
+- PulseChat/Core/UI/Components/ImagePicker.swift: wrapper de UIImagePickerController.
+
+9.10 Models
+- PulseChat/Models/User.swift: modelo User (id, email).
+- PulseChat/Models/Chat.swift: modelo Chat (participants, lastMessage, lastUpdated).
+- PulseChat/Models/Message.swift: modelo Message (text, senderId, date, chatId, imageData).
+
+9.11 Navigation
+- PulseChat/Navigation/NavigationCoordinator.swift: coordinador con NavigationPath (no usado en flujo principal actual).
+
+9.12 ViewModels
+- PulseChat/ViewModels/AuthViewModel.swift: estado y acciones de auth; login/register/logout/restoreSession.
+- PulseChat/ViewModels/ChatListViewModel.swift: carga de chats y estado de lista.
+- PulseChat/ViewModels/ChatDetailViewModel.swift: carga/envio/edicion/eliminacion de mensajes, adjuntos y notificaciones.
+- PulseChat/ViewModels/SearchUserViewModel.swift: busqueda de usuarios y creacion de chat.
+
+9.13 Views
+- PulseChat/Views/Root/RootView.swift: decide LoginView vs ChatListView; solicita permisos.
+- PulseChat/Views/Auth/LoginView.swift: UI de login/registro con toggle.
+- PulseChat/Views/Chat/ChatListView.swift: lista de chats, logout, buscar usuarios, offline banner.
+- PulseChat/Views/Chat/ChatDetailView.swift: detalle de chat, mensajes, adjuntos, edicion, envio.
+- PulseChat/Views/Chat/ChatRowView.swift: fila de chat en lista.
+- PulseChat/Views/Chat/SearchUserView.swift: busqueda de usuarios y apertura de chat.
+- PulseChat/Views/Shared/EmptyStateView.swift: estado vacio.
+
+9.14 Services - API (REST opcional)
+- PulseChat/Services/API/ChatAPI.swift: protocolo de API y DTOs.
+- PulseChat/Services/API/APIClient.swift: cliente URLSession (GET/POST/PUT/DELETE) con JSON ISO8601.
+- PulseChat/Services/API/Endpoints.swift: construccion de URLs base y rutas.
+- PulseChat/Services/API/MockAPIClient.swift: mock de la API para pruebas.
+
+9.15 Services - Firebase
+- PulseChat/Services/Firebase/FirebaseAsync.swift: wrappers async/await para Auth y Firestore.
+
+9.16 Services - Persistence
+- PulseChat/Services/Persistence/SwiftDataStack.swift: contenedor de SwiftData.
+- PulseChat/Services/Persistence/UserEntity.swift: entidad SwiftData de usuario.
+- PulseChat/Services/Persistence/ChatEntity.swift: entidad SwiftData de chat y relaciones.
+- PulseChat/Services/Persistence/MessageEntity.swift: entidad SwiftData de mensaje.
+
+9.17 Services - Repository
+- PulseChat/Services/Repository/AuthRepository.swift: login/register, session, usuarios en Firestore, Keychain.
+- PulseChat/Services/Repository/ChatRepository.swift: sync Firestore <-> SwiftData, CRUD de mensajes y chats.
+
+9.18 Localization
+- PulseChat/en.lproj/Localizable.strings: strings en ingles.
+- PulseChat/es.lproj/Localizable.strings: strings en espanol.
+
+9.19 Assets
+- PulseChat/Assets.xcassets/Contents.json: catalogo de assets.
+- PulseChat/Assets.xcassets/AccentColor.colorset/Contents.json: definicion del color de acento.
+- PulseChat/Assets.xcassets/AppIcon.appiconset/Contents.json: definicion de icono de app.
+
+9.20 Configuracion Firebase
+- PulseChat/GoogleService-Info.plist: configuracion de Firebase para el bundle (API keys y IDs).
+
+9.21 Xcode Project
+- PulseChat.xcodeproj/project.pbxproj: configuracion del proyecto, targets, frameworks y build settings.
+- PulseChat.xcodeproj/project.xcworkspace/contents.xcworkspacedata: definicion del workspace.
+- PulseChat.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved: versiones bloqueadas de dependencias SwiftPM.
+- PulseChat.xcodeproj/xcuserdata/paul.xcuserdatad/xcschemes/xcschememanagement.plist: estado de esquemas en Xcode.
+- PulseChat.xcodeproj/xcuserdata/paul.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist: breakpoints locales de Xcode.
+- PulseChat.xcodeproj/project.xcworkspace/xcuserdata/paul.xcuserdatad/UserInterfaceState.xcuserstate: estado de UI de Xcode (archivo local del usuario).
+
+9.22 Tests
+- PulseChatTests/PulseChatTests.swift: plantilla de tests unitarios (sin casos reales).
+- PulseChatUITests/PulseChatUITests.swift: plantilla de tests UI.
+- PulseChatUITests/PulseChatUITestsLaunchTests.swift: test de lanzamiento con screenshot.
+
+10) CUMPLIMIENTO DE REQUISITOS MINIMOS (MAPEO RAPIDO)
+- Codigo: Swift iOS.
+- Arquitectura: MVVM + capas separadas.
+- Navegacion: lista <-> detalle, busqueda -> detalle.
+- Consumo de datos: Firebase Auth + Firestore; REST opcional.
+- Manejo de errores y carga: isLoading + ErrorView + EmptyStateView.
+- Conectividad: NetworkMonitor + fallback a datos locales.
+- Persistencia local: SwiftData.
+- Seguridad: Keychain + Firebase Auth.
+- Permisos: camara/galeria/ubicacion/notificaciones.
+- Documentacion: README.md y README1.md.
+- Build: Xcode (simulador) segun README.
+- Extras: tema persistente, i18n, notificaciones, accesibilidad basica.
+
+11) OBSERVACIONES PARA LA EXPLICACION ORAL
+- Enfatizar el flujo completo (auth -> lista -> detalle).
+- Explicar el rol de Firestore como origen y SwiftData como cache local.
+- Resaltar manejo de estados UI (loading/error/empty/offline).
+- Mencionar seguridad (Keychain) y permisos.
+- Mostrar extras: tema, i18n, adjuntos, notificaciones.

@@ -1,0 +1,65 @@
+"app_name" = "PulseChat";
+"login" = "Login";
+"register" = "Register";
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
+"already_have_account" = "I already have an account";
+"create_account" = "Create account";
+
+"chats_title" = "Chats";
+"send_button" = "Send";
+"cancel_button" = "Cancel";
+"logout_button" = "Sign out";
+"search_placeholder" = "Search...";
+"search_button" = "Search";
+"search_users_title" = "Search users";
+"empty_chats" = "No chats yet";
+"empty_messages" = "No messages yet";
+"offline_banner" = "No connection. Showing local data.";
+"you_label" = "You";
+
+"gallery_option" = "Gallery";
+"camera_option" = "Camera";
+"message_placeholder" = "Message...";
+"edit_action" = "Edit";
+"delete_action" = "Delete";
+
+"loading" = "Loading";
+"error_title" = "Error";
+
+"theme_label" = "Theme";
+"theme_system" = "System";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+
+"language_label" = "Language";
+"language_system" = "System";
+"language_english" = "English";
+"language_spanish" = "Spanish";
+"language_menu_hint" = "Change the app language";
+
+"attach_menu" = "Attach";
+"attach_menu_hint" = "Open options to attach an image";
+"remove_attachment" = "Remove image";
+"image_attachment" = "Image attachment";
+"search_users_hint" = "Find users to start a chat";
+"send_hint" = "Send message";
+"cancel_edit_hint" = "Cancel editing";
+
+"error_auth_invalid_email" = "Invalid email address.";
+"error_auth_wrong_password" = "Incorrect password.";
+"error_auth_user_not_found" = "No account found for this email.";
+"error_auth_email_in_use" = "This email is already registered.";
+"error_auth_weak_password" = "Password must be at least 6 characters.";
+"error_auth_network" = "Network error. Check your connection.";
+"error_auth_default" = "Unable to authenticate.";
+"error_register_existing" = "This email already exists. Signing you in.";
+
+"error_send_message" = "Couldn't send the message. Check your connection.";
+"error_delete_message" = "Couldn't delete the message.";
+"error_edit_message" = "Couldn't edit the message.";
+"error_message_required" = "Type a message.";
+
+"error_api_invalid_response" = "Invalid network response.";
+"error_http_format" = "HTTP error %d";
+"image_message_fallback" = "Image";

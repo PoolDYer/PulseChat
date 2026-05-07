@@ -1,0 +1,65 @@
+"app_name" = "PulseChat";
+"login" = "Iniciar sesion";
+"register" = "Registrar";
+"email_placeholder" = "Correo";
+"password_placeholder" = "Contrasena";
+"already_have_account" = "Ya tengo cuenta";
+"create_account" = "Crear cuenta";
+
+"chats_title" = "Chats";
+"send_button" = "Enviar";
+"cancel_button" = "Cancelar";
+"logout_button" = "Salir";
+"search_placeholder" = "Buscar...";
+"search_button" = "Buscar";
+"search_users_title" = "Buscar usuarios";
+"empty_chats" = "No hay chats";
+"empty_messages" = "No hay mensajes";
+"offline_banner" = "Sin conexion. Mostrando datos locales.";
+"you_label" = "Tu";
+
+"gallery_option" = "Galeria";
+"camera_option" = "Camara";
+"message_placeholder" = "Mensaje...";
+"edit_action" = "Editar";
+"delete_action" = "Eliminar";
+
+"loading" = "Cargando";
+"error_title" = "Error";
+
+"theme_label" = "Tema";
+"theme_system" = "Sistema";
+"theme_light" = "Claro";
+"theme_dark" = "Oscuro";
+
+"language_label" = "Idioma";
+"language_system" = "Sistema";
+"language_english" = "Ingles";
+"language_spanish" = "Espanol";
+"language_menu_hint" = "Cambiar el idioma de la app";
+
+"attach_menu" = "Adjuntar";
+"attach_menu_hint" = "Abrir opciones para adjuntar imagen";
+"remove_attachment" = "Quitar imagen";
+"image_attachment" = "Imagen adjunta";
+"search_users_hint" = "Buscar usuarios para iniciar un chat";
+"send_hint" = "Enviar mensaje";
+"cancel_edit_hint" = "Cancelar edicion";
+
+"error_auth_invalid_email" = "El correo no es valido.";
+"error_auth_wrong_password" = "Contrasena incorrecta.";
+"error_auth_user_not_found" = "No existe una cuenta con ese correo.";
+"error_auth_email_in_use" = "Este correo ya esta registrado.";
+"error_auth_weak_password" = "La contrasena debe tener al menos 6 caracteres.";
+"error_auth_network" = "Error de red. Verifica tu conexion.";
+"error_auth_default" = "No se pudo autenticar.";
+"error_register_existing" = "Este correo ya existe. Iniciamos sesion.";
+
+"error_send_message" = "No se pudo enviar. Revisa tu conexion.";
+"error_delete_message" = "No se pudo eliminar el mensaje.";
+"error_edit_message" = "No se pudo editar el mensaje.";
+"error_message_required" = "Escribe un mensaje.";
+
+"error_api_invalid_response" = "Respuesta de red invalida.";
+"error_http_format" = "Error HTTP %d";
+"image_message_fallback" = "Imagen";
