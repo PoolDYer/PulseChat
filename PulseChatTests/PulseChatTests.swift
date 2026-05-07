@@ -2,8 +2,6 @@
 //  PulseChatTests.swift
 //  PulseChatTests
 //
-//  Created by Paul on 5/05/26.
-//
 
 import XCTest
 @testable import PulseChat
