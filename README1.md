@@ -45,7 +45,6 @@ Aplicacion de mensajeria para iOS construida con SwiftUI. Demuestra autenticacio
 
 ## Permisos del dispositivo
 - Solicitud al inicio:
-  - Camara (AVFoundation).
   - Galeria (Photos).
   - Ubicacion (CoreLocation).
   - Notificaciones (UserNotifications).
@@ -102,7 +101,7 @@ Aplicacion de mensajeria para iOS construida con SwiftUI. Demuestra autenticacio
 
 ## Build de desarrollo
 - Xcode: Product > Build.
-- CLI: `xcodebuild -scheme PulseChat -destination 'platform=iOS Simulator,name=iPhone 15' build`
+- CLI: `xcodebuild -scheme PulseChat -destination 'platform=iOS Simulator,name=iPhone 17' build`
 
 ## Estructura principal del proyecto
 - App: ciclo de vida y entrada (`PulseChatApp`).
@@ -110,15 +109,6 @@ Aplicacion de mensajeria para iOS construida con SwiftUI. Demuestra autenticacio
 - Services: API, Firebase y persistencia.
 - ViewModels: estado y logica de presentacion.
 - Views: pantallas y flujo principal.
-
-## Criterios de evaluacion (mapeo rapido)
-- Funcionalidad (40%): flujo completo, Firestore, SwiftData, navegacion.
-- Calidad del codigo (20%): MVVM, repositorios, DI, estados claros.
-- Seguridad y documentacion (20%): Firebase Auth, permisos, README.
-- Presentacion (20%): flujo lineal y decisiones tecnicas descritas.
-
-## Capturas
-- Pendiente. Puedes agregar imagenes o gifs en esta seccion.
 
 ## Limitaciones y pendientes
 - Accesibilidad avanzada pendiente (tests de VoiceOver, contrastes detallados).
