@@ -2,9 +2,6 @@
 //  LoginView.swift
 //  PulseChat
 //
-//  Created by Paul on 5/05/26.
-//
-
 import SwiftUI
 
 struct LoginView: View {
